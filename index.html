@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send a Message</title>
+    <script>
+        function showMessage() {
+            const message = document.getElementById('messageBox').value;
+            alert("Your message is: " + message);
+        }
+    </script>
+</head>
+<body>
+    <h2>Send me a message</h2>
+    <input type="text" id="messageBox" placeholder="Type your message here" />
+    <button onclick="showMessage()">Send</button>
+</body>
+</html>
