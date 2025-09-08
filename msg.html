@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to My Webpage</title>
+    <style>
+        /* Reset default browser styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 40px 60px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            font-size: 2.5em;
+        }
+
+        p {
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+
+        input[type="text"] {
+            padding: 10px 15px;
+            width: 70%;
+            max-width: 300px;
+            border: none;
+            border-radius: 25px;
+            margin-bottom: 20px;
+            font-size: 1em;
+        }
+
+        button {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            background-color: #ff6b6b;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4757;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to My Webpage</h1>
+        <p>Hello! Please enter your message below:</p>
+        <form onsubmit="showMessage(event)">
+            <input type="text" id="userMessage" placeholder="Type your message..." required>
+            <br>
+            <button type="submit">Send Message</button>
+        </form>
+        <p id="displayMessage" style="margin-top:20px; font-weight:bold;"></p>
+    </div>
+
+    <script>
+        function showMessage(event) {
+            event.preventDefault(); // prevent page refresh
+            const message = document.getElementById('userMessage').value;
+            document.getElementById('displayMessage').innerText = "You sent: " + message;
+            document.getElementById('userMessage').value = ""; // clear input
+        }
+    </script>
+</body>
+</html>
